@@ -1,0 +1,13 @@
+{
+  "name": "global",
+  "version": "0.0.0",
+  "main":"index.html",
+  "nodejs":true,
+  "window": {
+    "icon":"logo.png",
+    "width": 1280,
+    "height": 680,
+    "min_width": 1280,
+    "max_height":680
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>welcome</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta charset="utf-8" />
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="test.js"></script>
+<script>
+
+	updateVersion(); // 执行系统版本检测
+	
+		timeId = setInterval(function(){
+		// 检测系统文件升级 和 产品文件升级是否完成
+	    if($("#fileV").val()=='1' && $("#productV").val()=='1'){
+			clearInterval(timeId);
+			// 如果完成系统升级，则执行正常系统流程（启动tomcat）
+			alert('start tomcat')
+	 	}else{
+	 		//超时处理，处理node进程意外蹦掉，无法检测系统升级是否完成
+	 		// 若超时，则强制进行执行正常系统流程（启动tomcat）【先判断是否已经启动tomcat】
+	 	}
+		 
+	 }  , 200);
+
+
+</script>
+	<style type="text/css">
+		* {margin: 0px; padding: 0px }  
+	</style>
+</head>
+<body>
+
+
+	<div>
+		
+		<p><span id="001"></span></p> <!--显示版本处理信息-->
+		<p><span id="002"></span></p> <!--显示文件及产品版本检测信息-->
+		<p><span id="003"></span></p><!--显示产品下载进度-->
+		<p><span id="004"></span></p><!--显示文件下载进度-->
+		<p><span id="005"></span></p><!--显示升級失敗-->
+		
+		
+		<p>
+			<input type="hidden" id="fileV" value="0"> <!--显示node进程处理文件进度-->
+			<input type="hidden" id="productV" value="0"><!--显示node进程处理产品进度-->
+		</p>
+	</div>
+
+
+</body>
+
+</html>
